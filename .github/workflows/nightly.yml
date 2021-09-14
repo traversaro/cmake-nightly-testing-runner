@@ -23,7 +23,7 @@ jobs:
 
       - name: Install dependencies
         run: |
-          sudo apt-get install cmake build-essential
+          sudo apt-get install cmake build-essential libssl-dev
           cd ${GITHUB_WORKSPACE}/Dashboards/Scripts
           wget https://gitlab.kitware.com/cmake/dashboard-scripts/-/raw/master/cmake_common.cmake 
 
