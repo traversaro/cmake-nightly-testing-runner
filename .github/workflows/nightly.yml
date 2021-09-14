@@ -23,10 +23,11 @@ jobs:
 
       - name: Install dependencies
         run: |
-          sudo apt-get install cmake
+          sudo apt-get install cmake build-essential
           cd ${GITHUB_WORKSPACE}/Dashboards/Scripts
           wget https://gitlab.kitware.com/cmake/dashboard-scripts/-/raw/master/cmake_common.cmake 
 
       - name: Run Nightly Test
         run: |
+          ctest --version
           ctest -S ${GITHUB_WORKSPACE}/Dashboards/Scripts/matlab_dashboard.cmake -V
