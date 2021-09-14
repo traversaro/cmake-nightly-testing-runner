@@ -23,11 +23,16 @@ jobs:
 
       - name: Install dependencies
         run: |
-          sudo apt-get install cmake build-essential
+          sudo apt-get install cmake build-essential libssl-dev
           cd ${GITHUB_WORKSPACE}/Dashboards/Scripts
           wget https://gitlab.kitware.com/cmake/dashboard-scripts/-/raw/master/cmake_common.cmake 
 
+      - name: Setup MATLAB
+        uses: matlab-actions/setup-matlab@v1
+
       - name: Run Nightly Test
         run: |
+          env
+          which matlab
           ctest --version
           ctest -S ${GITHUB_WORKSPACE}/Dashboards/Scripts/matlab_dashboard.cmake -V
