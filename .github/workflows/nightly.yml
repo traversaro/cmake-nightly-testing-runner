@@ -37,6 +37,7 @@ jobs:
           ctest --version
           # Manually run MATLAB command for now
           matlab -nosplash -nojvm -logfile "matlabVersionLog.cmaketmp" -nodesktop -nodisplay -batch "version, exit"
+          echo $?
           # For this test, manually run CMake's tests
           git clone https://gitlab.kitware.com/traversaro/cmake.git -b fix/22646
           cd cmake
