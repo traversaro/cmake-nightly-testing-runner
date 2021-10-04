@@ -4,6 +4,8 @@ name: Nightly-CI
 
 # Controls when the workflow will run
 on:
+  push:
+  pull_request:
   # Periodic build
   schedule:
   # * is a special character in YAML so you have to quote this string
@@ -38,6 +40,11 @@ jobs:
           # Manually run MATLAB command for now
           matlab -nosplash -nojvm -logfile "matlabVersionLog.cmaketmp" -nodesktop -nodisplay -batch "version, exit"
           echo $?
+          echo "~~~"
+          # Check command used
+          /usr/local/MATLAB/R2021a/bin/matlab -nosplash -nojvm -logfile "matlabVersionLog.cmaketmp" -nodesktop -nodisplay -batch "version, exit"
+          echo $?
+          echo "~~~"
           # For this test, manually run CMake's tests
           git clone https://gitlab.kitware.com/traversaro/cmake.git -b fix/22646
           cd cmake
