@@ -38,7 +38,7 @@ jobs:
         shell: bash
         run: |
           cd ${GITHUB_WORKSPACE}/Dashboards/Scripts
-          wget https://gitlab.kitware.com/cmake/dashboard-scripts/-/raw/master/cmake_common.cmake 
+          curl -O https://gitlab.kitware.com/cmake/dashboard-scripts/-/raw/master/cmake_common.cmake 
 
       - name: Setup MATLAB
         uses: matlab-actions/setup-matlab@v1
