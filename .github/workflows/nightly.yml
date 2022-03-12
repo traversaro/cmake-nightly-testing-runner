@@ -46,6 +46,9 @@ jobs:
           echo "==== Running command with -batch ===="
           export MLM_LICENSE_FILE=$HOME/.matlab/licenses/batch.lic
           export HOME="/this/path/does/not/exist"
+          env
+          echo "$MLM_LICENSE_FILE"
+          cat $MLM_LICENSE_FILE
           matlab -nosplash -nojvm -logfile "matlabVersionLog.cmaketmp" -nodesktop -nodisplay -batch "version, exit"
           echo $?
           # Check command used
