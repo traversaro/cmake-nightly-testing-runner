@@ -9,6 +9,6 @@ set(dashboard_cache "CMake_TEST_FindMatlab:BOOL=TRUE")
 # For now, do not submit 
 set(dashboard_no_submit TRUE)
 # Temporary debug of PR https://gitlab.kitware.com/cmake/cmake/-/merge_requests/6586
-set(dashboard_git_url "https://gitlab.kitware.com/traversaro/cmake.git")
-set(dashboard_git_branch "fix/22646")
+# set(dashboard_git_url "https://gitlab.kitware.com/traversaro/cmake.git")
+# set(dashboard_git_branch "fix/22646")
 include(${CTEST_SCRIPT_DIRECTORY}/cmake_common.cmake)
