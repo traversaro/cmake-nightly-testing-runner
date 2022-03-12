@@ -1,6 +1,6 @@
 # This is a nightly workflow based on https://gitlab.kitware.com/cmake/cmake/-/blob/master/Help/dev/testing.rst
 
-name: MATLAB-Nightly-CI
+name: Nightly-CI
 
 # Controls when the workflow will run
 on:
@@ -14,7 +14,7 @@ on:
   workflow_dispatch:
 
 jobs:
-  matlab-nightly-test:
+  build:
     name: '[matlab:${{ matrix.matlab_version }}:${{ matrix.os }}]'
     runs-on: ${{ matrix.os }}
     strategy:
