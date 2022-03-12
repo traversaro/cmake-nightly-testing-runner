@@ -52,7 +52,8 @@ jobs:
           echo $?
           echo "~~~"
           # For this test, manually run CMake's tests
-          git clone https://gitlab.kitware.com/traversaro/cmake.git -b fix/22646
+          # git clone https://gitlab.kitware.com/traversaro/cmake.git -b fix/22646
+          git clone https://gitlab.kitware.com/cmake/cmake.git
           cd cmake
           mkdir build
           cd build
