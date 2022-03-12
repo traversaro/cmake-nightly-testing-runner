@@ -1,6 +1,6 @@
 # This is a nightly workflow based on https://gitlab.kitware.com/cmake/cmake/-/blob/master/Help/dev/testing.rst
 
-name: Nightly-CI
+name: MATLAB-Nightly-CI
 
 # Controls when the workflow will run
 on:
@@ -14,8 +14,15 @@ on:
   workflow_dispatch:
 
 jobs:
-  build:
-    runs-on: ubuntu-20.04
+  matlab-nightly-test:
+    name: '[matlab:${{ matrix.matlab_version }}:${{ matrix.os }}]'
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        build_type: [Release]
+        os: [ubuntu-20.04]
+        matlab_version: [R2020a, R2020b, R2021a, latest]
 
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
@@ -29,6 +36,8 @@ jobs:
 
       - name: Setup MATLAB
         uses: matlab-actions/setup-matlab@v1
+        with:
+          release: ${{ matrix.matlab_version }}
 
       - name: Run Nightly Test
         run: |
