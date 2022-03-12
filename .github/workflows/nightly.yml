@@ -17,7 +17,6 @@ jobs:
   build:
     runs-on: ubuntu-20.04
     strategy:
-      fail-fast: false
       matrix:
         matlab_version: [R2020a, R2020b, R2021a, latest]
 
