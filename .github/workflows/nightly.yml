@@ -42,11 +42,6 @@ jobs:
           echo "==== Running command with -batch ===="
           matlab -nosplash -nojvm -logfile "matlabVersionLog.cmaketmp" -nodesktop -nodisplay -batch "version, exit"
           echo $?
-          # Old (-r)
-          echo "==== Running command with -r ===="
-          matlab -nosplash -nojvm -logfile "matlabVersionLog.cmaketmp" -nodesktop -nodisplay -r "version, exit"
-          echo $?
-          echo "~~~"
           # Check command used
           /usr/local/MATLAB/R2021b/bin/matlab -nosplash -nojvm -logfile "matlabVersionLog.cmaketmp" -nodesktop -nodisplay -batch "version, exit"
           echo $?
@@ -56,7 +51,7 @@ jobs:
           cd cmake
           mkdir build
           cd build
-          cmake -DBUILD_TESTING:BOOL=ON -DCMake_TEST_FindMatlab:BOOL=TRUE ..
+          cmake -DBUILD_TESTING:BOOL=ON -DCTEST_NO_TEST_HOME:BOOL=OFF -DCMake_TEST_FindMatlab:BOOL=TRUE ..
           make -j10
           ctest -VV -R Matlab
           # ctest -S ${GITHUB_WORKSPACE}/Dashboards/Scripts/matlab_dashboard.cmake -V
