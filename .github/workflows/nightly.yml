@@ -35,7 +35,7 @@ jobs:
 
       # workaround for https://github.com/robotology/robotology-superbuild/issues/64
       - name: Do not use MATLAB's stdc++ to avoid incompatibilities with other libraries
-        if: contains(matrix.os, 'ubuntu')
+        # if: contains(matrix.os, 'ubuntu')
         run: |
           echo 'LD_PRELOAD=/usr/lib/x86_64-linux-gnu/libstdc++.so.6' >> $GITHUB_ENV
 
