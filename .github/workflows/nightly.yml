@@ -11,14 +11,12 @@ on:
   - cron:  '0 2 * * *'
 
   # Allows you to run this workflow manually from the Actions tab
+  # test
   workflow_dispatch:
 
 jobs:
   build:
     runs-on: ubuntu-20.04
-    strategy:
-      matrix:
-        matlab_version: [R2020a, R2020b, R2021a, latest]
 
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
