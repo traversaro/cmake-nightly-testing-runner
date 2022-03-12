@@ -42,11 +42,6 @@ jobs:
           echo "==== Running command with -batch ===="
           matlab -nosplash -nojvm -logfile "matlabVersionLog.cmaketmp" -nodesktop -nodisplay -batch "version, exit"
           echo $?
-          # Old (-r)
-          echo "==== Running command with -r ===="
-          matlab -nosplash -nojvm -logfile "matlabVersionLog.cmaketmp" -nodesktop -nodisplay -r "version, exit"
-          echo $?
-          echo "~~~"
           # Check command used
           /usr/local/MATLAB/R2021b/bin/matlab -nosplash -nojvm -logfile "matlabVersionLog.cmaketmp" -nodesktop -nodisplay -batch "version, exit"
           echo $?
