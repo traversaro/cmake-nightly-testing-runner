@@ -42,7 +42,7 @@ jobs:
           echo $?
           echo "~~~"
           # Check command used
-          /usr/local/MATLAB/R2021a/bin/matlab -nosplash -nojvm -logfile "matlabVersionLog.cmaketmp" -nodesktop -nodisplay -batch "version, exit"
+          /usr/local/MATLAB/R2021b/bin/matlab -nosplash -nojvm -logfile "matlabVersionLog.cmaketmp" -nodesktop -nodisplay -batch "version, exit"
           echo $?
           echo "~~~"
           # For this test, manually run CMake's tests
