@@ -40,6 +40,7 @@ jobs:
           # Manually run MATLAB command for now
           # New (-batch)
           echo "==== Running command with -batch ===="
+          export HOME="/this/path/does/not/exist"
           matlab -nosplash -nojvm -logfile "matlabVersionLog.cmaketmp" -nodesktop -nodisplay -batch "version, exit"
           echo $?
           # Check command used
