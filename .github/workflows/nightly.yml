@@ -34,6 +34,10 @@ jobs:
 
       - name: Run Nightly Test
         run: |
+          # Debug location of licenses
+          # MLM_LICENSE_FILE
+          ls $HOME/.matlab/
+          ls $HOME/.matlab/R2021b_licenses
           env
           which matlab
           ctest --version
