@@ -40,19 +40,7 @@ jobs:
           ls $HOME/.matlab/licenses
           env
           which matlab
-          ctest --version
-          # Manually run MATLAB command for now
-          # New (-batch)
-          echo "==== Running command with -batch ===="
-          export MLM_LICENSE_FILE=$HOME/.matlab/licenses/batch.lic
-          export HOME="/this/path/does/not/exist"
-          env
-          echo "$MLM_LICENSE_FILE"
-          cat $MLM_LICENSE_FILE
-          source $MLM_LICENSE_FILE
-          env
-          matlab -nosplash -nojvm -logfile "matlabVersionLog.cmaketmp" -nodesktop -nodisplay -batch "version, exit"
-          echo $?
+          ctest --version    
           # Check command used
           /usr/local/MATLAB/R2021b/bin/matlab -nosplash -nojvm -logfile "matlabVersionLog.cmaketmp" -nodesktop -nodisplay -batch "version, exit"
           echo $?
