@@ -35,6 +35,7 @@ jobs:
 
 
       - name: Install dependencies
+        shell: bash
         run: |
           cd ${GITHUB_WORKSPACE}/Dashboards/Scripts
           wget https://gitlab.kitware.com/cmake/dashboard-scripts/-/raw/master/cmake_common.cmake 
@@ -45,6 +46,7 @@ jobs:
           release: ${{ matrix.matlab_version }}
 
       - name: Run Nightly Test
+        shell: bash
         run: |
           env
           which matlab
