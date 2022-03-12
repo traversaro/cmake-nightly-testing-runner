@@ -21,16 +21,21 @@ jobs:
       fail-fast: false
       matrix:
         build_type: [Release]
-        os: [ubuntu-20.04]
+        os: [ubuntu-20.04, windows-2019, macos-10.15]
         matlab_version: [R2020a, R2020b, R2021a, latest]
 
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
+      
+      - name: Install Linux-specific dependencies
+        if: contains(matrix.os, 'ubuntu')
+        run: |
+          sudo apt-get install cmake build-essential libssl-dev
+
 
       - name: Install dependencies
         run: |
-          sudo apt-get install cmake build-essential libssl-dev
           cd ${GITHUB_WORKSPACE}/Dashboards/Scripts
           wget https://gitlab.kitware.com/cmake/dashboard-scripts/-/raw/master/cmake_common.cmake 
 
