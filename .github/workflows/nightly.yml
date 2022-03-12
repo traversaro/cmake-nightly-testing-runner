@@ -49,6 +49,8 @@ jobs:
           env
           echo "$MLM_LICENSE_FILE"
           cat $MLM_LICENSE_FILE
+          source $MLM_LICENSE_FILE
+          env
           matlab -nosplash -nojvm -logfile "matlabVersionLog.cmaketmp" -nodesktop -nodisplay -batch "version, exit"
           echo $?
           # Check command used
