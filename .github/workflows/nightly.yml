@@ -38,7 +38,8 @@ jobs:
 
       - name: Setup MATLAB
         uses: matlab-actions/setup-matlab@v1
-
+        with:
+          release: ${{ matrix.matlab_version }}
 
       # workaround for https://github.com/robotology/robotology-superbuild/issues/64
       - name: Do not use MATLAB's stdc++ to avoid incompatibilities with other libraries
