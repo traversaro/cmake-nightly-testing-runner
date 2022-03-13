@@ -49,17 +49,6 @@ jobs:
 
       - name: Run Nightly Test
         run: |
-          # Debug location of licenses
-          # MLM_LICENSE_FILE
-          ls $HOME/.matlab/
-          ls $HOME/.matlab/licenses
-          env
-          which matlab
-          ctest --version    
-          # Check command used
-          /usr/local/MATLAB/R2021b/bin/matlab -nosplash -nojvm -logfile "matlabVersionLog.cmaketmp" -nodesktop -nodisplay -batch "version, exit"
-          echo $?
-          echo "~~~"
           # For this test, manually run CMake's tests
           git clone https://gitlab.kitware.com/traversaro/cmake.git -b fix/22646
           cd cmake
