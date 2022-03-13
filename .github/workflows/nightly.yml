@@ -17,7 +17,14 @@ on:
 
 jobs:
   build:
-    runs-on: ubuntu-20.04
+    name: '[matlab:${{ matrix.matlab_version }}:${{ matrix.os }}]'
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        build_type: [Release]
+        os: [ubuntu-20.04]
+        matlab_version: [R2020a, R2020b, R2021a, R2021b, latest]
 
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
