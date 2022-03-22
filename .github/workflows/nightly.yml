@@ -15,7 +15,11 @@ on:
 
 jobs:
   build:
+    name: 'Linux-GCC-Matlab-${{ matrix.matlab_version }}' 
     runs-on: ubuntu-20.04
+    strategy:
+      matrix:
+        matlab_version: [R2020b, R2021a, R2021b, R2022a]
 
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
@@ -29,9 +33,12 @@ jobs:
 
       - name: Setup MATLAB
         uses: matlab-actions/setup-matlab@v1
-
+        with:
+          release: ${{ matrix.matlab_version }}
+        
       - name: Run Nightly Test
         run: |
+          export GHA_MATLAB_VERSION=${{ matrix.matlab_version }}
           env
           which matlab
           ctest --version
