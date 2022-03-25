@@ -7,6 +7,4 @@ set(CTEST_CMAKE_GENERATOR "Unix Makefiles")
 set(CTEST_TEST_ARGS INCLUDE Matlab)
 set(dashboard_cache "CMake_TEST_FindMatlab:BOOL=TRUE
 CTEST_NO_TEST_HOME:BOOL=ON")
-# For now, do not submit 
-set(dashboard_no_submit TRUE)
 include(${CTEST_SCRIPT_DIRECTORY}/cmake_common.cmake)
