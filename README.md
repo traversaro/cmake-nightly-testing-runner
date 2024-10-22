@@ -4,4 +4,4 @@ Experimental GitHub Action-based runner for CMake Nightly Testing for testing MA
 
 Results can be found at https://open.cdash.org/index.php?project=CMake .
 
-Last updated: 2024-01-01
+Last updated: 2024-10-22
