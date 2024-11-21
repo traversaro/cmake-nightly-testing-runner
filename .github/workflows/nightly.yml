@@ -32,7 +32,7 @@ jobs:
           wget https://gitlab.kitware.com/cmake/dashboard-scripts/-/raw/master/cmake_common.cmake 
 
       - name: Setup MATLAB
-        uses: matlab-actions/setup-matlab@v1
+        uses: matlab-actions/setup-matlab@v2
         with:
           release: ${{ matrix.matlab_version }}
         
